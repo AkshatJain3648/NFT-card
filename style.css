@@ -1,85 +1,163 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
-
-html,
-body {
-  background-color: hsl(217, 54%, 11%);
-  font-family: "Outfit", sans-serif;
-  color: white;
-  font-size: 18px;
-  /* overflow: hidden; */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-/* === LAYOUTING === */
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+html,body{
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  background: #0d192c;
+}
+
 main {
   display: flex;
-  align-items: center;
+  height: 100vh;
   justify-content: center;
-  height: 95vh;
-  background-color: hsl(217, 54%, 11%);
+  align-items: center;
 }
 
-/* === CARD === */
-.card {
-  background-color: hsl(216, 50%, 16%);
-  max-width: 360px;
-  padding: 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 1px 1px 5px rgba(77, 77, 77, 0.1);
-}
-
-.card:hover{
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  transition: all 0.7s;
+.card{
+  display: flex;
+  flex-direction: column;
+  width: 19.5rem;
+  height: 33rem;
+  padding: 2em 1em;
+  background: #15263f;
+  border-radius: 15px;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.0952917);
 }
 
 .card-image {
+  position: relative;
+  align-self: center;
+  width: 302px;
+  height: 302px;
+}
+
+.card-image:hover .equilibrium-logo-overlay {
+  opacity: 0.5;
+}
+
+.card-image:hover .equilibrium-logo-overlay img {
+  opacity: 1;
+}
+
+.nft {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  overflow: hidden;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.3s ease;
+  background-color: #00fff8;
+  mix-blend-mode: normal;
+  cursor: pointer;
 }
 
-.card-image > .nft {
-  width: 100%;
+h1 {
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  color: white;
 }
 
-.card-info {
-  justify-content: space-between;
-  font-size: 1rem;
-  margin-bottom: 10px;
+h1:hover {
+  color: #00fff8;
+  cursor: pointer;
 }
 
-.card-footer {
-  border-top: 1px solid hsl(215, 32%, 27%);
+p {
+  margin-top: 1rem;
+  font-weight: 300;
+  line-height: 1.5rem;
+  color: #8bacd9;
+}
+
+.nft-info {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding-top: 1rem;
+  justify-content: space-between;
+  height: 1rem;
+  margin-top: 1rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #2e405a;
 }
 
-/* ===FOOTER===  */
-.avatar {
-  height: 7vh;
-  border: 1px solid white;
+.price img {
+  position: relative;
+  top: 2px;
+  margin-right: 0.2rem;
+}
+
+.price span {
+  color: #00fff8;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.time span {
+  color: #8bacd9;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.time img {
+  position: relative;
+  margin-right: 0.2rem;
+  top: 4px;
+}
+
+.creator {
+  display: flex;
+  margin-top: 1rem;
+  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.8rem;
+}
+
+.creator img {
+  max-width: 100%;
+  max-height: 7vh;
   border-radius: 100%;
+  border: 1px solid white;
 }
 
-.card-prize {
-  color:hsl(178, 100%, 50%);
-  font-weight: bold;
+.creator p {
+  color: #8bacd9;
 }
 
-.card-prize img{
-  padding-right:5px;
-}
-
-.creator-name{
+.creator span {
   color: white;
-  font-weight: bold;
 }
 
-.attribution{
-  display:flex;
-  justify-content:center;
+.creator span:hover {
+  color: #00fff8;
+  cursor: pointer;
 }
